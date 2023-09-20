@@ -11,7 +11,7 @@ void swap(int *a, int *b) {
 
 // Fonction pour remplir un tableau
 void remplirTableau(int tableau[], int taille) {
-    printf("Saisissez %d éléments pour le tableau :\n", taille);
+    printf("Saisissez %d Ã©lÃ©ments pour le tableau :\n", taille);
     for (int i = 0; i < taille; i++) {
         scanf("%d", &tableau[i]);
     }
@@ -31,24 +31,24 @@ int main() {
     int tableau[MAX_SIZE];
     int taille;
 
-    //Entrée de valeurs
+    //EntrÃ©e de valeurs
     printf("Entrez la valeur de a : ");
     scanf("%d", &a);
 
     printf("Entrez la valeur de b : ");
     scanf("%d", &b);
 
-    printf("Entrez la taille du tableau (ne dépassez pas %d) : ", MAX_SIZE);
+    printf("Entrez la taille du tableau (ne dÃ©passez pas %d) : ", MAX_SIZE);
     scanf("%d", &taille);
 
-    //Permutation résultat
+    //Permutation rÃ©sultat
     printf("\n \n");
     printf("Avant la permutation : a = %d, b = %d\n", a, b);
 
 
     swap(&a, &b);
 
-    printf("Après la permutation : a = %d, b = %d\n", a, b);
+    printf("AprÃ¨s la permutation : a = %d, b = %d\n", a, b);
 
 
     // Remplissage du tableau
