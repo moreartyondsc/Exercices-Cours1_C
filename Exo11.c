@@ -1,44 +1,66 @@
 #include <stdio.h>
 
-#define N 3
+#define MAX_SIZE 5
 
+// Fonction pour permuter deux entiers
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
-void transposeMatrix(int matrix[N][N], int result[N][N]) {
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            result[i][j] = matrix[j][i];
-        }
+// Fonction pour remplir un tableau
+void remplirTableau(int tableau[], int taille) {
+    printf("Saisissez %d éléments pour le tableau :\n", taille);
+    for (int i = 0; i < taille; i++) {
+        scanf("%d", &tableau[i]);
     }
 }
 
-
-void printMatrix(int matrix[N][N]) {
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\n");
+// Fonction pour afficher un tableau
+void afficherTableau(const int tableau[], int taille) {
+    printf("Tableau :\n");
+    for (int i = 0; i < taille; i++) {
+        printf("%d ", tableau[i]);
     }
+    printf("\n");
 }
 
 int main() {
-    int matrix[N][N];
-    int result[N][N];
+    int a, b;
+    int tableau[MAX_SIZE];
+    int taille;
 
+    //Entrée de valeurs
+    printf("Entrez la valeur de a : ");
+    scanf("%d", &a);
 
-    printf("Entrez les elements de la matrice %dx%d ligne par ligne :\n", N, N);
-    for (int i = 0; i < N; i++) {
-        printf("Colone %d : ", i + 1);
-        for (int j = 0; j < N; j++) {
-            scanf("%d", &matrix[i][j]);
-        }
-    }
+    printf("Entrez la valeur de b : ");
+    scanf("%d", &b);
 
-    transposeMatrix(matrix, result);
+    printf("Entrez la taille du tableau (ne dépassez pas %d) : ", MAX_SIZE);
+    scanf("%d", &taille);
 
+    //Permutation résultat
     printf("\n \n");
-    printf("Matrice transposee :\n");
-    printMatrix(result);
+    printf("Avant la permutation : a = %d, b = %d\n", a, b);
+
+
+    swap(&a, &b);
+
+    printf("Après la permutation : a = %d, b = %d\n", a, b);
+
+
+    // Remplissage du tableau
+    if (taille <= 0 || taille > MAX_SIZE) {
+        printf("La taille du tableau n'est pas valide.\n");
+        return 1;
+    }
+    remplirTableau(tableau, taille);
+
+    printf("\n");
+    // Affichage du tableau
+    afficherTableau(tableau, taille);
 
     return 0;
 }
