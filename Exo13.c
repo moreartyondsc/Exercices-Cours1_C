@@ -1,33 +1,49 @@
 #include <stdio.h>
 
 int main() {
-    int p, r;
-    int a, b;
+    int p;
+    float a, b;
+    float r;
 
     printf("Entrez un nombre entier: \n");
-    scanf("%d", &a);
+    scanf("%f", &a);
     printf("Entrez un autre nombre entier: \n");
-    scanf("%d", &b);
+    scanf("%f", &b);
 
-    printf("Quel opÈration souhaitez vous faire ? (1 pour + et 0 pour -)\n");
+    printf("Quelle op√©ration souhaitez-vous faire ? (1 pour + | 0 pour - | 2 pour * | 3 pour /)\n");
     scanf("%d", &p);
 
     switch (p)
     {
-    case (int)1:
+    case 1:
         r = a + b;
-        printf("Le rÈsultat de l'addition est: %d\n", r);
+        printf("Le r√©sultat de l'addition est: %f\n", r);
         break;
 
-    case (int)0:
-
+    case 0:
         r = a - b;
-        printf("Le rÈsultat de la soustraction est: %d\n", r);
+        printf("Le r√©sultat de la soustraction est: %f\n", r);
+        break;
+
+    case 2:
+        r = a * b;
+        printf("Le r√©sultat de la multiplication est: %f\n", r);
+        break;
+
+    case 3:
+        if (b != 0) {
+            r = (float)a / b;
+            printf("Le resultat de la division est: %f\n", r);
+        } else {
+            printf("Division par z√©ro n'est pas autoris√©e.\n");
+        }
         break;
 
     default:
-        printf("OpÈration inconnue\n");
-        printf("Veuillez entrer un nombre entre 0 et 1\n");
+        printf("Op√©ration inconnue\n");
+        printf("Veuillez entrer un nombre entre 0 et 3\n");
         break;
     }
+
+    return 0;
 }

@@ -2,16 +2,15 @@
 
 #define MAX_SIZE 5
 
-// Fonction pour permuter deux entiers
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+void swap(int a, int b){
+    int temp = a;
+    a = b;
+    b = temp;
 }
 
 // Fonction pour remplir un tableau
 void remplirTableau(int tableau[], int taille) {
-    printf("Saisissez %d éléments pour le tableau :\n", taille);
+    printf("Saisissez %d elements pour le tableau :\n", taille);
     for (int i = 0; i < taille; i++) {
         scanf("%d", &tableau[i]);
     }
@@ -41,14 +40,13 @@ int main() {
     printf("Entrez la taille du tableau (ne dépassez pas %d) : ", MAX_SIZE);
     scanf("%d", &taille);
 
+    swap(a, b);
+
     //Permutation résultat
     printf("\n \n");
     printf("Avant la permutation : a = %d, b = %d\n", a, b);
 
-
-    swap(&a, &b);
-
-    printf("Après la permutation : a = %d, b = %d\n", a, b);
+    printf("Après la permutation : a = %d, b = %d\n", b, a);
 
 
     // Remplissage du tableau

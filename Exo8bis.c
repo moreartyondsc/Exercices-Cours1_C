@@ -4,12 +4,14 @@
 int main(){
     int n;
     int U0 = 1;
+    int i = 0;
 
-
-    printf("Entree le nombre n:");
+    printf("Entrée le nombre n:");
     scanf("%d", &n);
 
-    for (int i=0;i < n;i++){
+    while (i < n)
+    {
+        i++;
         U0 = 5*U0+3;
     }
 
